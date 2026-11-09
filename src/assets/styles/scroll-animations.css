@@ -1,0 +1,64 @@
+/* ─── Scroll reveal animations ────────────────────────────────────────── */
+/* Content is visible by default: without JavaScript, in prerendered HTML and
+   above the fold. useRevealObserver (SiteLayout) adds .reveal-pending only to
+   elements that start below the fold, and removes it as they scroll in. */
+
+.reveal,
+.reveal-left,
+.reveal-right,
+.reveal-scale {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Children animate only while revealing, so their own hover transitions stay intact */
+.reveal-stagger.reveal-in > * {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.reveal-pending {
+  opacity: 0;
+  transform: translateY(32px);
+}
+
+.reveal-left.reveal-pending {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.reveal-right.reveal-pending {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.reveal-scale.reveal-pending {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+/* Stagger children */
+.reveal-stagger.reveal-pending > * {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.reveal-stagger.reveal-in > *:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger.reveal-in > *:nth-child(2) { transition-delay: 80ms; }
+.reveal-stagger.reveal-in > *:nth-child(3) { transition-delay: 160ms; }
+.reveal-stagger.reveal-in > *:nth-child(4) { transition-delay: 240ms; }
+.reveal-stagger.reveal-in > *:nth-child(5) { transition-delay: 320ms; }
+.reveal-stagger.reveal-in > *:nth-child(6) { transition-delay: 400ms; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-in > *,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale,
+  .reveal-pending,
+  .reveal-pending > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

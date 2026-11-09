@@ -1,0 +1,37 @@
+:root {
+  color-scheme: dark;
+  --color-primary: #c4c185;
+  --color-primary-hover: #d1cfa1;
+  --color-primary-light: #404747;
+  --color-secondary: #1a1a1a;
+  --color-secondary-hover: #2e2e2e;
+  --color-accent: #393939;
+  --color-accent-hover: #4d4d4d;
+  --color-bg: #161d29;
+  --color-bg-secondary: #252e39;
+  --color-bg-tertiary: #3d4752;
+  --color-bg-card: #232d38;
+  --color-bg-hover: #414a52;
+  --color-text: #f3f4f6;
+  --color-text-secondary: #d1d5db;
+  --color-text-muted: #9ca3af;
+  --color-text-inverse: #111827;
+  --color-border: #414a52;
+  --color-border-light: #505a63;
+  --color-success: #5eead4;
+  --color-success-light: #052e16;
+  --color-warning: #fbbf24;
+  --color-warning-light: #451a03;
+  --color-danger: #f87171;
+  --color-danger-light: #450a0a;
+  --color-sidebar-bg: #1b1b0d;
+  --color-sidebar-text: #d1d5db;
+  --color-sidebar-hover: #302f17;
+  --color-sidebar-active: #c4c185;
+  --color-surface: #252e39;
+  --color-primary-ink: #c4c185;
+  --color-on-primary: #111827;
+  --font-heading: 'Bebas Neue', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+  --border-radius: 0;
+}

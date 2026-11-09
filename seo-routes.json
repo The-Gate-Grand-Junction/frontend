@@ -1,0 +1,12 @@
+{
+  "routes": [
+    "/",
+    "/about",
+    "/contact",
+    "/privacy-policy",
+    "/terms-and-conditions",
+    "/accessibility",
+    "/donate"
+  ],
+  "detailPages": []
+}

@@ -1,0 +1,193 @@
+@import 'tailwindcss';
+@import './theme.css';
+@import './scroll-animations.css';
+
+/* ─── Base layer: global resets that Tailwind utilities can override ────── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: 1.6;
+    min-height: 100dvh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+  }
+
+  a {
+    color: var(--color-primary-ink);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  :focus-visible {
+    outline: none;
+  }
+}
+
+/* ─── Focus indicator system ─────────────────────────────────────────────── */
+/* Light background: dark dashed outline */
+.focus-ring:focus-visible,
+:focus-visible {
+  outline: 3px dashed var(--color-primary-ink);
+  outline-offset: 2px;
+}
+
+/* Dark background: light dashed outline — use on hero, stats, pricing highlighted, footer */
+.focus-ring-light:focus-visible {
+  outline: 3px dashed rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Page layout — not in a layer so it acts as structural scaffolding */
+.page {
+  /* No max-width or padding here — let sections go full-bleed.
+     Individual content blocks set their own max-w and px. */
+}
+
+.page > h1 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+  text-align: center;
+}
+
+/* CMS body copy (Portable Text): .prose-body for any section, .legal-content for legal pages */
+.legal-content {
+  max-width: 48rem;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.prose-body {
+  line-height: 1.6;
+}
+
+.legal-content h1,
+.prose-body h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+}
+
+.legal-content h2,
+.prose-body h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.75rem 0 0.75rem;
+  color: var(--color-text);
+}
+
+.legal-content h3,
+.prose-body h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+}
+
+/* Rich text headings raised to keep the outline in order (src/lib/richText.ts)
+   keep the size the editor picked */
+.legal-content .look-h3,
+.prose-body .look-h3 {
+  font-size: 1.25rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.legal-content .look-h4,
+.prose-body .look-h4,
+.legal-content h4,
+.prose-body h4 {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.legal-content p,
+.prose-body p {
+  margin-bottom: 1rem;
+}
+
+.legal-content strong,
+.prose-body strong {
+  font-weight: 600;
+}
+
+.legal-content ul,
+.legal-content ol,
+.prose-body ul,
+.prose-body ol {
+  margin: 0.5rem 0 1rem 1.5rem;
+  padding-left: 1rem;
+}
+
+.legal-content ul,
+.prose-body ul {
+  list-style-type: disc;
+}
+
+.legal-content ol,
+.prose-body ol {
+  list-style-type: decimal;
+}
+
+.legal-content li,
+.prose-body li {
+  margin-bottom: 0.25rem;
+  display: list-item;
+}
+
+.legal-content a,
+.prose-body a {
+  color: var(--color-primary-ink);
+  text-decoration: underline;
+}
+
+/* ─── Portable text used in sections (pricing CTA, text content, project write-ups) ─── */
+.prose-cta ul,
+.prose-cta ol {
+  margin: 0.5rem 0 1rem 1.5rem;
+  padding-left: 1rem;
+}
+
+.prose-cta ul { list-style-type: disc; }
+.prose-cta ol { list-style-type: decimal; }
+.prose-cta li { margin-bottom: 0.25rem; display: list-item; }
+.prose-cta p { margin-bottom: 1rem; }
+.prose-cta strong { font-weight: 600; }
+.prose-cta a { color: var(--color-primary-ink); text-decoration: underline; }
