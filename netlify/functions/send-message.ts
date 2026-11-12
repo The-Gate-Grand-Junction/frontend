@@ -2,10 +2,10 @@ import type { Config, Context } from '@netlify/functions';
 import { Resend } from 'resend';
 import { checkToken, fromThisSite, issueToken, spamReason } from '../lib/formGuard';
 
-const TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'ljkurtz00@msn.com';
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'info@thegategj.com';
 const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || 'onboarding@resend.dev';
 const SITE_DOMAIN = 'thegategj.com';
-const BRAND_COLOR = '#B3B063';
+const BRAND_COLOR = '#D3B063';
 
 /** Seconds a person needs, at least, to fill in the form. */
 const MIN_ELAPSED_SECONDS = 3;

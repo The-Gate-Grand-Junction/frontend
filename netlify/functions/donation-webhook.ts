@@ -25,11 +25,11 @@ import { Resend } from 'resend';
 import { storeConfigured, storeSubmission } from '../lib/submissions';
 import { verifyWebhook } from '../lib/stripe';
 
-const TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'ljkurtz00@msn.com';
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'info@thegategj.com';
 const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || 'onboarding@resend.dev';
 const ORG_NAME = process.env.DONATION_ORG_NAME || 'The Gate : A Meeting Venue';
 const SITE_DOMAIN = 'thegategj.com';
-const BRAND_COLOR = '#B3B063';
+const BRAND_COLOR = '#D3B063';
 const SOURCE = 'website-donation';
 
 export interface Gift {

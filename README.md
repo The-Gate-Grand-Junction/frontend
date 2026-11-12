@@ -16,8 +16,8 @@ Values that vary per client use the `##PLACEHOLDER##` pattern. These are replace
 - `<!-- Simple Analytics — cookieless, privacy-first -->
     <script async data-hostname="thegategj.com" src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
     <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?hostname=thegategj.com" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>` — the Simple Analytics or GA4 tag in `index.html`, chosen from the dashboard's analytics provider
-- `ljkurtz00@msn.com`, ``, `2825 North Ave, Grand Junction, CO 81501` — contact info
-- `#B3B063`, `#000000`, etc. — brand colors (light theme)
+- `info@thegategj.com`, ``, `2825 North Ave, Grand Junction, CO 81501` — contact info
+- `#D3B063`, `#000000`, etc. — brand colors (light theme)
 - `#c4c185`, `#1a1a1a`, etc. — brand colors (dark theme)
 - `'Bebas Neue', sans-serif`, `'Montserrat', sans-serif` — full font stacks (`'Montserrat', sans-serif`, or the system stack for "System UI")
 - `<!-- Fonts self-hosted from /fonts/ (Latin subset); the critical weights are preloaded -->

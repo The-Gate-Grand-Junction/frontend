@@ -49,7 +49,7 @@ const baseJsonLd: Record<string, unknown> = {
   "@type": "NGO",
   "name": "The Gate : A Meeting Venue",
   "url": "https://thegategj.com",
-  "email": "ljkurtz00@msn.com",
+  "email": "info@thegategj.com",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "2825 North Ave",
