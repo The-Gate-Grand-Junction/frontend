@@ -191,3 +191,85 @@
 .prose-cta p { margin-bottom: 1rem; }
 .prose-cta strong { font-weight: 600; }
 .prose-cta a { color: var(--color-primary-ink); text-decoration: underline; }
+
+/* ── Section headings and highlighted boxes (TextContent, MapSection) ── */
+/* Short gold rule above a heading, echoing the hero */
+.section-rule {
+  display: block;
+  width: 2.5rem;
+  height: 3px;
+  margin-bottom: 1rem;
+  background-color: var(--color-primary);
+}
+
+.section-heading {
+  margin: 0 0 1.25rem;
+  color: var(--color-text);
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.section-heading--panel {
+  margin: 0;
+  font-size: clamp(1.875rem, 3vw, 2.25rem);
+}
+
+/* "Intro" style: a larger, brighter first paragraph */
+.text-lead > p:first-child {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+/* Charcoal box with a gold top edge for key details (meeting times, address) */
+.info-panel {
+  padding: 2rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-primary);
+}
+
+.info-panel__heading {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.info-panel__icon {
+  flex: none;
+  color: var(--color-primary);
+}
+
+/* Gold outline action inside a box: secondary to the gold hero button */
+.info-panel__action {
+  display: inline-block;
+  padding: 0.625rem 1.25rem;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--border-radius);
+  color: var(--color-primary-ink);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.info-panel__action:hover {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  text-decoration: none;
+}
+
+.info-panel__action:focus-visible {
+  outline: 3px dashed var(--color-primary-ink);
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .info-panel { padding: 1.5rem; }
+}
+
+.info-panel .legal-content > :last-child {
+  margin-bottom: 0;
+}
