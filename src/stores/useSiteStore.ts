@@ -7,21 +7,22 @@ export const useSiteStore = defineStore('site', {
     logo: '',
     darkLogo: '',
     tagline: '',
-    contactEmail: 'ljkurtz00@msn.com',
+    // Public address only (forwards to the owners); never the personal inbox
+    contactEmail: 'info@thegategj.com',
     contactPhone: '',
     address: '2825 North Ave, Grand Junction, CO 81501',
     ctaLabel: '',
     ctaUrl: '/contact',
-    ctaHeadline: 'Ready to get started?',
-    ctaSubtext: 'Let\'s build something great together.',
+    // Footer band shows only when Site Settings fills these in
+    ctaHeadline: '',
+    ctaSubtext: '',
     ctaFooterLabel: '',
     ctaFooterUrl: '',
     copyrightText: '',
+    // Tier 1 launch: Home only, so no unfinished page shows before Studio's menu loads.
+    // Full launch: add back About (/about), Contact (/contact), Donate (/donate).
     primaryNav: [
       { label: 'Home', to: '/' },
-      { label: 'About', to: '/about' },
-      { label: 'Contact', to: '/contact' },
-      { label: 'Donate', to: '/donate' },
     ],
     footerNav: [
 

@@ -1,36 +1,40 @@
+/* The Gate brand kit (see brand-colors.json at the project root).
+   Dark-first: black base, charcoal surfaces, gold accents.
+   Gold is an accent and link color, never body text. */
 :root {
   color-scheme: dark;
-  --color-primary: #c4c185;
-  --color-primary-hover: #d1cfa1;
-  --color-primary-light: #404747;
-  --color-secondary: #1a1a1a;
-  --color-secondary-hover: #2e2e2e;
-  --color-accent: #393939;
-  --color-accent-hover: #4d4d4d;
-  --color-bg: #161d29;
-  --color-bg-secondary: #252e39;
-  --color-bg-tertiary: #3d4752;
-  --color-bg-card: #232d38;
-  --color-bg-hover: #414a52;
-  --color-text: #f3f4f6;
-  --color-text-secondary: #d1d5db;
-  --color-text-muted: #9ca3af;
-  --color-text-inverse: #111827;
-  --color-border: #414a52;
-  --color-border-light: #505a63;
-  --color-success: #5eead4;
-  --color-success-light: #052e16;
-  --color-warning: #fbbf24;
-  --color-warning-light: #451a03;
-  --color-danger: #f87171;
-  --color-danger-light: #450a0a;
-  --color-sidebar-bg: #1b1b0d;
-  --color-sidebar-text: #d1d5db;
-  --color-sidebar-hover: #302f17;
-  --color-sidebar-active: #c4c185;
-  --color-surface: #252e39;
-  --color-primary-ink: #c4c185;
-  --color-on-primary: #111827;
+  --color-primary: #D3B063;        /* Gold */
+  --color-primary-hover: #DFC383;
+  --color-primary-light: #2A2416;  /* gold tint on black */
+  /* Carries black text (button hover, secondary button), so it stays light */
+  --color-secondary: #E5E5E5;      /* Light Gray */
+  --color-secondary-hover: #FFFFFF;
+  --color-accent: #1F1F1F;         /* Charcoal */
+  --color-accent-hover: #2E2E2E;
+  --color-bg: #000000;             /* Black */
+  --color-bg-secondary: #1F1F1F;
+  --color-bg-tertiary: #2A2A2A;
+  --color-bg-card: #1F1F1F;
+  --color-bg-hover: #2E2E2E;
+  --color-text: #FFFFFF;
+  --color-text-secondary: #E5E5E5;
+  --color-text-muted: #A3A3A3;
+  --color-text-inverse: #000000;
+  --color-border: #333333;
+  --color-border-light: #262626;
+  --color-success: #4ADE80;
+  --color-success-light: #0F2A1A;
+  --color-warning: #FBBF24;
+  --color-warning-light: #2B2006;
+  --color-danger: #F87171;
+  --color-danger-light: #2D1111;
+  --color-sidebar-bg: #000000;
+  --color-sidebar-text: #E5E5E5;
+  --color-sidebar-hover: #1F1F1F;
+  --color-sidebar-active: #D3B063;
+  --color-surface: #1F1F1F;
+  --color-primary-ink: #D3B063;    /* links/outlines: 10.16:1 on black, 7.97:1 on charcoal */
+  --color-on-primary: #000000;     /* text on gold: 10.16:1 */
   --font-heading: 'Bebas Neue', sans-serif;
   --font-body: 'Montserrat', sans-serif;
   --border-radius: 0;

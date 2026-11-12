@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 import { RouterLink } from 'vue-router';
 import { Menu, X } from 'lucide-vue-next';
 import { useSiteStore } from '@/stores/useSiteStore';
@@ -12,6 +13,9 @@ import SmartLink from '@/components/ui/SmartLink.vue';
 // header button, when set) open in a panel below
 const site = useSiteStore();
 const { open, header, menu, menuButton } = useHeaderMenu();
+// A menu holding only Home has nothing to offer (one-page launch): hide it and
+// show the header button inline. It returns once Studio's Main menu has more pages.
+const hasMenu = computed(() => site.primaryNav.some((item) => item.to !== '/'));
 </script>
 
 <template>
@@ -22,7 +26,11 @@ const { open, header, menu, menuButton } = useHeaderMenu();
       <div class="site-header__actions">
         
         <ThemeToggle />
+        <SmartLink v-if="!hasMenu && site.ctaLabel" :to="site.ctaUrl" class="site-header__cta site-header__cta--inline">
+          {{ site.ctaLabel }}
+        </SmartLink>
         <button
+          v-if="hasMenu"
           ref="menuButton"
           type="button"
           class="site-header__menu-button"
@@ -38,6 +46,7 @@ const { open, header, menu, menuButton } = useHeaderMenu();
     </div>
 
     <nav
+      v-if="hasMenu"
       id="site-menu"
       ref="menu"
       class="site-header__panel"
@@ -162,5 +171,14 @@ const { open, header, menu, menuButton } = useHeaderMenu();
     align-self: stretch;
     text-align: center;
   }
+}
+
+/* In the header bar itself (no menu): compact, vertically centred */
+.site-header__cta--inline {
+  align-self: center;
+  margin-top: 0;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  white-space: nowrap;
 }
 </style>

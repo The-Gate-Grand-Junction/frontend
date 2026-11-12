@@ -12,7 +12,11 @@ export function useFooter() {
   const columns = computed(() =>
     [
       // Submenu pages listed after their parent
-      { title: 'Pages', links: site.primaryNav.flatMap((i) => [i, ...(i.children ?? [])]) },
+      // A Main menu holding only Home isn't worth a column (one-page launch)
+      {
+        title: 'Pages',
+        links: site.primaryNav.some((i) => i.to !== '/') ? site.primaryNav.flatMap((i) => [i, ...(i.children ?? [])]) : [],
+      },
       { title: 'More', links: site.footerNav },
       { title: 'Legal', links: site.legalNav },
     ].filter((c) => c.links.length),

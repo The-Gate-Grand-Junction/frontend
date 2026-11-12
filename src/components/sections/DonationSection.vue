@@ -186,9 +186,7 @@ const pill =
 </template>
 
 <style scoped>
-/* Status colors that hold 4.5:1 on the light and dark surfaces */
-.form-error { color: #b91c1c; }
-.form-ok { color: #15803d; }
-:root[data-theme='dark'] .form-error { color: #fca5a5; }
-:root[data-theme='dark'] .form-ok { color: #86efac; }
+/* Status colors from the theme: the site is dark-only, whatever data-theme says */
+.form-error { color: var(--color-danger); }
+.form-ok { color: var(--color-success); }
 </style>

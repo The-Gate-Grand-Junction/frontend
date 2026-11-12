@@ -53,7 +53,7 @@ onUnmounted(() => { heroRef.value?.removeEventListener('mousemove', onHeroMouseM
     <div class="relative z-10 text-center text-white max-w-3xl mx-auto">
       <component :is="`h${headingLevel}`" v-if="section?.title || site.name" class="text-5xl font-extrabold leading-tight mb-4">{{ section?.title || site.name }}</component>
       <p v-if="section?.subtitle || site.tagline" class="text-xl opacity-80 mb-8">{{ section?.subtitle || site.tagline }}</p>
-      <SmartLink v-if="section?.cta?.label && section?.cta?.url" :to="section.cta.url" class="focus-ring-light inline-block border-2 border-white text-white font-semibold px-8 py-3 rounded-lg hover:bg-white hover:text-[#111827] transition-colors">{{ section.cta.label }}</SmartLink>
+      <SmartLink v-if="section?.cta?.label && section?.cta?.url" :to="section.cta.url" class="focus-ring-light inline-block border-2 border-white text-white font-semibold px-8 py-3 rounded-lg hover:bg-white hover:text-[#000000] transition-colors">{{ section.cta.label }}</SmartLink>
     </div>
   </section>
 </template>
@@ -62,7 +62,8 @@ onUnmounted(() => { heroRef.value?.removeEventListener('mousemove', onHeroMouseM
 .hero {
   --cursor-x: 50%;
   --cursor-y: 40%;
-  background: radial-gradient(600px circle at var(--cursor-x) var(--cursor-y), rgba(255,255,255,0.15), transparent 60%), linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  /* Brand: black-to-charcoal with a soft gold glow that follows the cursor */
+  background: radial-gradient(600px circle at var(--cursor-x) var(--cursor-y), color-mix(in srgb, var(--color-primary) 18%, transparent), transparent 60%), linear-gradient(135deg, var(--color-bg) 0%, var(--color-surface) 100%);
   background-size: cover; background-position: center; will-change: background; transition: background 0.1s ease;
 }
 .hero__image {
@@ -73,7 +74,7 @@ onUnmounted(() => { heroRef.value?.removeEventListener('mousemove', onHeroMouseM
 .hero__tint {
   --scrim: rgba(0, 0, 0, 0.25);
   position: absolute; inset: 0;
-  background: linear-gradient(var(--scrim), var(--scrim)), radial-gradient(600px circle at var(--cursor-x) var(--cursor-y), rgba(255,255,255,0.12), transparent 60%), linear-gradient(135deg, color-mix(in srgb, var(--color-primary) 75%, transparent) 0%, color-mix(in srgb, var(--color-secondary) 75%, transparent) 100%);
+  background: linear-gradient(var(--scrim), var(--scrim)), radial-gradient(600px circle at var(--cursor-x) var(--cursor-y), color-mix(in srgb, var(--color-primary) 15%, transparent), transparent 60%), linear-gradient(135deg, color-mix(in srgb, var(--color-bg) 70%, transparent) 0%, color-mix(in srgb, var(--color-surface) 55%, transparent) 100%);
 }
 @media (max-width: 640px) {
   .hero__tint { --scrim: rgba(0, 0, 0, 0.45); }

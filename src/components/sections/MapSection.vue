@@ -16,7 +16,8 @@ const directionsUrl = computed(() =>
 
 <template>
   <section v-if="embedUrl || section?.address" class="reveal py-16 px-6 bg-[var(--color-bg)]">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+    <!-- Without a map, match the text sections' column so the page lines up -->
+    <div :class="embedUrl ? 'max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-start' : 'max-w-3xl mx-auto'">
       <div class="space-y-4">
         <h2 v-if="section?.heading" class="text-3xl font-bold text-[var(--color-text)]">{{ section.heading }}</h2>
         <p v-if="section?.intro" class="text-[var(--color-text-secondary)] leading-relaxed">{{ section.intro }}</p>

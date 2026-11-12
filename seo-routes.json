@@ -1,12 +1,10 @@
 {
   "routes": [
     "/",
-    "/about",
-    "/contact",
     "/privacy-policy",
     "/terms-and-conditions",
-    "/accessibility",
-    "/donate"
+    "/accessibility"
   ],
-  "detailPages": []
+  "detailPages": [],
+  "_tier1": "Home + legal pages until full launch. Add back then: /about, /contact, /donate."
 }
