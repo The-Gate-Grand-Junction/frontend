@@ -1,11 +1,12 @@
 import { onServerPrefetch, watch, type Ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { defineStore } from 'pinia'
+import { sanityImage } from '@/composables/useSanityImage'
 
 interface PageSeoFields {
   seoTitle?: string
   seoDescription?: string
-  shareImage?: string
+  shareImage?: { asset?: unknown } | null
 }
 
 /**
@@ -32,7 +33,7 @@ export function usePageSeo(page: Ref<PageSeoFields | null>, ready?: Promise<void
       title: doc?.seoTitle || undefined,
       description: doc?.seoDescription || undefined,
       // Share previews are 1200×630; crop around the hotspot
-      image: doc?.shareImage ? `${doc.shareImage}?w=1200&h=630&fit=crop&auto=format` : undefined,
+      image: doc?.shareImage?.asset ? sanityImage(doc.shareImage).width(1200).height(630).fit('crop').auto('format').url() : undefined,
     })
   }
   watch(page, apply, { immediate: true })

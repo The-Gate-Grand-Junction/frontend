@@ -21,6 +21,16 @@ function onHeroMouseMove(e) {
 // A real <img> (not a CSS background) so the browser finds it in the HTML,
 // fetches it first, and picks the size the screen needs
 const HERO_WIDTHS = [640, 960, 1280, 1920, 2560];
+
+// The URL applies the Studio crop; CSS object-fit: cover then trims the rest to
+// fit the screen. Aim that trim at the hotspot, measured inside the crop.
+function hotspotPosition(img) {
+  const h = img?.hotspot;
+  if (!h) return undefined;
+  const c = { top: 0, bottom: 0, left: 0, right: 0, ...img.crop };
+  const pct = (v, start, end) => Math.min(100, Math.max(0, ((v - start) / (1 - start - end)) * 100)).toFixed(1);
+  return `${pct(h.x, c.left, c.right)}% ${pct(h.y, c.top, c.bottom)}%`;
+}
 const heroImage = computed(() => {
   const img = props.section?.image;
   if (!img) return null;
@@ -28,6 +38,7 @@ const heroImage = computed(() => {
   return {
     src: at(1280),
     srcset: HERO_WIDTHS.map((w) => `${at(w)} ${w}w`).join(', '),
+    position: hotspotPosition(img),
   };
 });
 
@@ -46,6 +57,7 @@ onUnmounted(() => { heroRef.value?.removeEventListener('mousemove', onHeroMouseM
         fetchpriority="high"
         decoding="async"
         class="hero__image"
+        :style="heroImage.position ? { objectPosition: heroImage.position } : undefined"
       />
       <div class="hero__tint" aria-hidden="true"></div>
     </template>

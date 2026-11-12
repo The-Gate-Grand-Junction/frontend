@@ -6,6 +6,10 @@ import { useSeo } from '@/composables/useSeo';
 import { useRevealObserver } from '@/composables/useRevealObserver';
 import { useSanity } from '@/composables/useSanity';
 import { useSiteStore } from '@/stores/useSiteStore';
+import { sanityImage } from '@/composables/useSanityImage';
+
+/** A Studio image field as fetched: asset reference plus crop/hotspot */
+type SanityImage = { asset?: { _ref?: string }; crop?: unknown; hotspot?: unknown };
 
 useSeo();
 useRevealObserver();
@@ -16,8 +20,8 @@ const site = useSiteStore();
 // ── Site Settings ──
 interface SiteSettings {
   siteName?: string;
-  logo?: { asset?: { url?: string } };
-  darkLogo?: { asset?: { url?: string } };
+  logo?: SanityImage;
+  darkLogo?: SanityImage;
   ctaLabel?: string;
   ctaUrl?: string;
   ctaHeadline?: string;
@@ -40,8 +44,8 @@ interface SiteSettings {
 const { data: settings, ready: settingsReady } = useSanity<SiteSettings>(
   `*[_type == "siteSettings"][0]{
     siteName,
-    "logo": logo{asset->{url}},
-    "darkLogo": darkLogo{asset->{url}},
+    "logo": logo{ asset, crop, hotspot },
+    "darkLogo": darkLogo{ asset, crop, hotspot },
     ctaLabel,
     ctaUrl,
     ctaHeadline,
@@ -65,8 +69,9 @@ const { data: settings, ready: settingsReady } = useSanity<SiteSettings>(
 function applySettings(s: SiteSettings | null) {
   if (!s) return;
   if (s.siteName) site.name = s.siteName;
-  if (s.logo?.asset?.url) site.logo = s.logo.asset.url;
-  if (s.darkLogo?.asset?.url) site.darkLogo = s.darkLogo.asset.url;
+  // The builder applies the Studio crop (rect=…); HeaderLogo then sizes it
+  if (s.logo?.asset) site.logo = sanityImage(s.logo).url();
+  if (s.darkLogo?.asset) site.darkLogo = sanityImage(s.darkLogo).url();
   if (s.ctaLabel) site.ctaLabel = s.ctaLabel;
   if (s.ctaUrl) site.ctaUrl = s.ctaUrl;
   if (s.ctaHeadline) site.ctaHeadline = s.ctaHeadline;
