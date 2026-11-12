@@ -2,12 +2,13 @@
   command = "pnpm build"
   publish = "dist"
 
-# Netlify's secret scan flags these because their values also appear in the code,
-# but none is secret: dataset/API version/site URL ship in the public bundle,
-# and the org name and sending address appear in every email. Real secrets
-# (Stripe, Resend, Sentry keys) are still scanned.
+# The env vars were imported all marked "secret", so the scan fails whenever a
+# public value also appears in the code or the built site. None of these is
+# secret (VITE_* ship in the public bundle; the rest are names, addresses and
+# IDs that appear on the site or in emails). Still scanned: RESEND_API_KEY,
+# STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, SENTRY_AUTH_TOKEN, FORMS_INTAKE_SECRET.
 [build.environment]
-  SECRETS_SCAN_OMIT_KEYS = "VITE_SANITY_DATASET,VITE_SANITY_API_VERSION,VITE_SITE_URL,DONATION_ORG_NAME,CONTACT_FROM_EMAIL"
+  SECRETS_SCAN_OMIT_KEYS = "VITE_SANITY_PROJECT_ID,VITE_SANITY_DATASET,VITE_SANITY_API_VERSION,VITE_SITE_URL,VITE_SENTRY_DSN,VITE_SENTRY_ENV,DONATION_ORG_NAME,DONATION_EIN,CONTACT_FROM_EMAIL,CONTACT_TO_EMAIL,SENTRY_ORG,SENTRY_PROJECT,STRIPE_PORTAL_LOGIN_URL,FORMS_INTAKE_URL"
 
 [[headers]]
   for = "/*"
