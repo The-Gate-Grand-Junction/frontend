@@ -14,7 +14,7 @@ Values that vary per client use the `##PLACEHOLDER##` pattern. These are replace
 - `` — short tagline
 - `thegategj.com` — the site's primary domain (contact email, sitemap, SEO)
 - `<!-- Simple Analytics — cookieless, privacy-first -->
-    <script async src="https://sa.thegategj.com/latest.js" data-hostname="thegategj.com"></script>
+    <script async data-hostname="thegategj.com" src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
     <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif?hostname=thegategj.com" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>` — the Simple Analytics or GA4 tag in `index.html`, chosen from the dashboard's analytics provider
 - `ljkurtz00@msn.com`, ``, `2825 North Ave, Grand Junction, CO 81501` — contact info
 - `#B3B063`, `#000000`, etc. — brand colors (light theme)

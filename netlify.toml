@@ -13,7 +13,7 @@
     # every subdomain of the client's domain, including ones run by their IT
     # provider (mail, devices), which RMWS couldn't risk.
     Strict-Transport-Security = "max-age=31536000"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://sa.thegategj.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://cdn.sanity.io https://i.ytimg.com https://queue.simpleanalyticscdn.com https://sa.thegategj.com; font-src 'self' data:; connect-src 'self' https://*.api.sanity.io https://*.apicdn.sanity.io https://*.ingest.sentry.io https://*.ingest.us.sentry.io https://queue.simpleanalyticscdn.com https://sa.thegategj.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com https://www.google.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://scripts.simpleanalyticscdn.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://cdn.sanity.io https://i.ytimg.com https://queue.simpleanalyticscdn.com; font-src 'self' data:; connect-src 'self' https://*.api.sanity.io https://*.apicdn.sanity.io https://*.ingest.sentry.io https://*.ingest.us.sentry.io https://queue.simpleanalyticscdn.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com https://www.google.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
 
 [[headers]]
   for = "/assets/*"
