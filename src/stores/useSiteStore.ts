@@ -3,7 +3,7 @@ import type { SiteConfig } from '@/types/site';
 
 export const useSiteStore = defineStore('site', {
   state: (): SiteConfig => ({
-    name: 'The Gate : A Meeting Venue',
+    name: 'The Gate: A Meeting Venue',
     logo: '',
     darkLogo: '',
     tagline: '',

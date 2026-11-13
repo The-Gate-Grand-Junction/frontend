@@ -10,7 +10,7 @@ Vite, Vue 3, TypeScript, Tailwind CSS 4, Vue Router, Pinia, Lucide Vue Next, @vu
 
 Values that vary per client use the `##PLACEHOLDER##` pattern. These are replaced by the scaffolder at generation time:
 
-- `The Gate : A Meeting Venue` — client business name
+- `The Gate: A Meeting Venue` — client business name
 - `` — short tagline
 - `thegategj.com` — the site's primary domain (contact email, sitemap, SEO)
 - `<!-- Simple Analytics — cookieless, privacy-first -->

@@ -12,7 +12,7 @@ import type { Config, Context } from '@netlify/functions';
 import { checkToken, fromThisSite, issueToken } from '../lib/formGuard';
 import { stripeConfigured, stripePost } from '../lib/stripe';
 
-const ORG_NAME = process.env.DONATION_ORG_NAME || 'The Gate : A Meeting Venue';
+const ORG_NAME = process.env.DONATION_ORG_NAME || 'The Gate: A Meeting Venue';
 /** Whole dollars. Below this a gift mostly feeds fees, and tiny charges are what card testers use. */
 const MIN_DOLLARS = 5;
 const MAX_DOLLARS = 10_000;

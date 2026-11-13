@@ -47,7 +47,7 @@ const pageMeta: Record<string, { title: string; description: string }> = {
 const baseJsonLd: Record<string, unknown> = {
   "@context": "https://schema.org",
   "@type": "NGO",
-  "name": "The Gate : A Meeting Venue",
+  "name": "The Gate: A Meeting Venue",
   "url": "https://thegategj.com",
   "email": "info@thegategj.com",
   "address": {
