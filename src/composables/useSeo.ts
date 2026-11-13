@@ -9,20 +9,20 @@ const siteUrl = import.meta.env.VITE_SITE_URL || 'https://thegategj.com';
 // A page's own Share image (Studio → Search & Social) wins. Without either, no image tags are emitted.
 const defaultImage = '';
 
-// Fallback search copy from Build Tools. Each page's Search & Social fields in Studio win,
+// Fallback search copy, worded to the client's Mission Statement (the-gate-site-content.md). Each page's Search & Social fields in Studio win,
 // so the client owns their search results.
 const pageMeta: Record<string, { title: string; description: string }> = {
   '/': {
     title: 'Home',
-    description: 'The Gate is a meeting venue for worship, connection, and life-changing encounters. Explore a welcoming space for ministries, leaders, and community gatherings.',
+    description: 'The Gate is a sacred, non-denominational meeting venue in Grand Junction, CO, where Christians gather for prayer, worship, Bible study, and ministry conferences.',
   },
   '/about': {
     title: 'About',
-    description: 'Learn about The Gate, a professional meeting venue built for worship, connection, collaboration, and leadership development. Meet the vision behind the space.',
+    description: 'Inspired by Psalm 100:4, The Gate is a non-denominational sanctuary in Grand Junction where the Body of Christ gathers to seek the Lord. Our mission and values.',
   },
   '/contact': {
     title: 'Contact',
-    description: 'Contact The Gate to ask about availability and plan your next meeting, worship gathering, or event. We\'d love to help you find the right space for your people.',
+    description: 'Contact The Gate in Grand Junction, CO, about upcoming prayer gatherings, worship nights, Bible studies, and ministry conferences. You are welcome here.',
   },
   '/privacy-policy': {
     title: 'Privacy Policy',
@@ -38,7 +38,7 @@ const pageMeta: Record<string, { title: string; description: string }> = {
   },
   '/donate': {
     title: 'Donate',
-    description: 'Support The Gate and help keep our doors open for worship, connection, and life-changing encounters. Your gift sustains a welcoming space for the community.',
+    description: 'Support The Gate and help keep a sacred, welcoming space open for prayer, worship, Bible study, and fellowship among believers in Grand Junction.',
   },
 };
 
